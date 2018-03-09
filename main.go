@@ -27,8 +27,8 @@ func main() {
 	rootCmd.Flags().StringSliceVarP(&opt.Structs, "structs", "s", nil, "specified struct names")
 	rootCmd.Flags().IntSliceVarP(&opt.Lines, "lines", "l", nil, "specified lines")
 	rootCmd.Flags().StringSliceVarP(&opt.Tags, "tags", "t", nil, "tags to add")
-	rootCmd.Flags().StringVarP(&ffmt, "format", "f", "", "field name format type")
-	rootCmd.Flags().BoolVarP(&opt.Rewrite, "rewrite", "r", false, "rewrite src file")
+	rootCmd.Flags().StringVarP(&ffmt, "format", "f", "", "field name format type, default empty. \"camel\" or \"snake\" allowed")
+	rootCmd.Flags().BoolVarP(&opt.Rewrite, "rewrite", "r", false, "rewrite src file, default false")
 
 	if err := rootCmd.Execute(); err != nil {
 		log.Fatalln(err)
